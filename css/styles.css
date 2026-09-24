@@ -5,14 +5,21 @@
 
 :root {
   /* Chromatic Palette */
-  --bg-canvas: #f8fafc;        /* Warm Studio Slate base */
-  --bg-surface: #ffffff;       /* Pure white card elevation */
-  --text-primary: #0f172a;     /* Deep Obsidian (high acuity, fatigue-free) */
-  --text-secondary: #475569;   /* Slate neutral for supporting copy */
-  --accent-primary: #2563eb;   /* Cobalt Royal (Technical authority) */
-  --accent-teal: #0d9488;      /* Warm Teal (Growth & pedagogy) */
-  --border-subtle: #e2e8f0;    /* Crisp architectural borders */
-  
+  --bg-canvas: #f8fafc;
+  /* Warm Studio Slate base */
+  --bg-surface: #ffffff;
+  /* Pure white card elevation */
+  --text-primary: #0f172a;
+  /* Deep Obsidian (high acuity, fatigue-free) */
+  --text-secondary: #475569;
+  /* Slate neutral for supporting copy */
+  --accent-primary: #2563eb;
+  /* Cobalt Royal (Technical authority) */
+  --accent-teal: #0d9488;
+  /* Warm Teal (Growth & pedagogy) */
+  --border-subtle: #e2e8f0;
+  /* Crisp architectural borders */
+
   /* Elevation & Shadows */
   --shadow-subtle: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
   --shadow-hover: 0 10px 25px -3px rgba(15, 23, 42, 0.08);
@@ -22,7 +29,9 @@
 }
 
 /* Base Reset & Smooth Scroll */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -90,27 +99,34 @@ body {
 }
 
 /* ==========================================================================
-   Hero Section
+   Hero Section (Massive Scale & Negative Space)
    ========================================================================== */
 .hero-section {
-  max-width: 1200px;
+  max-width: 1440px;
+  /* Expanded from 1200px for a wider, cinematic feel */
   margin: 0 auto;
-  padding: 6rem 2rem 4rem;
+  padding: 10rem 2rem 6rem;
+  /* Massive top padding to push it down the page */
 }
 
 .hero-content h1 {
-  font-size: 2.75rem;
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  /* MASSIVE fluid typography */
   font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-  margin-bottom: 1rem;
+  letter-spacing: -0.04em;
+  /* Tighter letter-spacing makes huge text look premium */
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+  max-width: 1000px;
 }
 
 .value-prop {
-  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  /* Scaled up sub-copy */
   color: var(--text-secondary);
-  max-width: 680px;
-  margin-bottom: 2rem;
+  max-width: 750px;
+  margin-bottom: 3rem;
+  line-height: 1.5;
 }
 
 .tech-stack {
@@ -123,9 +139,9 @@ body {
   background: var(--bg-surface);
   color: var(--text-primary);
   border: 1px solid var(--border-subtle);
-  padding: 0.4rem 0.9rem;
+  padding: 0.5rem 1.25rem;
   border-radius: 9999px;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 600;
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
 }
@@ -134,12 +150,14 @@ body {
    Portfolio Canvas & Split-Pane Architecture
    ========================================================================== */
 .portfolio-canvas {
-  max-width: 1200px;
+  max-width: 1440px;
+  /* Expanded to match the hero */
   margin: 0 auto;
-  padding: 2rem 2rem 6rem;
+  padding: 2rem 2rem 10rem;
   display: flex;
   flex-direction: column;
-  gap: 4rem; /* High breathing room between case studies */
+  gap: 8rem;
+  /* Massive breathing room between case studies */
 }
 
 .case-study {
@@ -147,14 +165,14 @@ body {
   border: 1px solid var(--border-subtle);
   border-radius: 16px;
   box-shadow: var(--shadow-subtle);
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
   overflow: hidden;
-  transition: box-shadow 0.25s ease;
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
 }
 
 .case-study:hover {
-  box-shadow: var(--shadow-hover);
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.15);
+  transform: translateY(-4px);
+  /* Premium floating effect on hover */
 }
 
 /* Left Pane: Visual & Interactive Viewport */
@@ -247,13 +265,13 @@ body {
   .case-study {
     grid-template-columns: 1fr;
   }
-  
+
   .pane-left {
     border-right: none;
     border-bottom: 1px solid var(--border-subtle);
     min-height: 260px;
   }
-  
+
   .hero-content h1 {
     font-size: 2.25rem;
   }
@@ -264,8 +282,10 @@ body {
   html {
     scroll-behavior: auto;
   }
-  
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -275,7 +295,8 @@ body {
 /* Embedded Interactive Viewport Frame */
 .interactive-viewport {
   padding: 1.5rem !important;
-  background: #0f172a; /* Sleek dark bezel behind the display */
+  background: #0f172a;
+  /* Sleek dark bezel behind the display */
 }
 
 .iframe-container {
@@ -306,9 +327,17 @@ body {
   display: inline-block;
 }
 
-.dot-red { background: #ef4444; }
-.dot-yellow { background: #f59e0b; }
-.dot-green { background: #10b981; }
+.dot-red {
+  background: #ef4444;
+}
+
+.dot-yellow {
+  background: #f59e0b;
+}
+
+.dot-green {
+  background: #10b981;
+}
 
 .browser-url {
   margin-left: 0.5rem;
@@ -340,3 +369,176 @@ body {
   height: 100%;
   border: none;
 }
+
+/* ==========================================================================
+   Deep Dive Case Study Architecture (Premium Layout)
+   ========================================================================== */
+.case-study.deep-dive {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  background: var(--bg-surface);
+}
+
+/* 1. Full-Bleed Visual */
+.hero-visual {
+  width: 100%;
+  background: #0f172a;
+  padding: 0 !important;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.hero-visual .iframe-container {
+  height: 600px;
+  /* Expands the iframe for maximum impact */
+  border-radius: 16px 16px 0 0;
+  border: none;
+  box-shadow: none;
+}
+
+/* 2. Metadata Bar */
+.metadata-bar {
+  display: flex;
+  gap: 4rem;
+  padding: 2rem 3rem;
+  background: #f8fafc;
+  border-bottom: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.meta-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-primary);
+  font-weight: 800;
+}
+
+.meta-value {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* 3. Narrative Grid */
+.narrative-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  padding: 3rem;
+}
+
+.narrative-col h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--border-subtle);
+  padding-bottom: 0.5rem;
+}
+
+.narrative-col p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Impact Column Offset (Agency Aesthetic) */
+.impact-col {
+  background: rgba(13, 148, 136, 0.04);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(13, 148, 136, 0.15);
+  margin-top: -1.5rem;
+  /* Creates a sophisticated staggered layout */
+}
+
+.impact-metric {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent-teal);
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+/* Responsive adjustments for the new layout */
+@media (max-width: 900px) {
+  .narrative-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 2rem;
+  }
+
+  .impact-col {
+    margin-top: 0;
+  }
+
+  .metadata-bar {
+    padding: 1.5rem 2rem;
+    gap: 2rem;
+  }
+
+  .hero-visual .iframe-container {
+    height: 450px;
+  }
+}
+
+/* ==========================================================================
+   Strategic Timeline Statements
+   ========================================================================== */
+.statement-block {
+  padding: 4rem 2rem;
+  text-align: center;
+  max-width: 950px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.statement-block h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+
+.statement-block p {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  max-width: 800px;
+}
+
+/* ==========================================================================
+   Scroll-Triggered Motion (Micro-Interactions)
+   ========================================================================== */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* The triggered active state */
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger utilities for cascading effects */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
